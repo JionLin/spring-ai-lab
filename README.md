@@ -31,7 +31,13 @@ mvn spring-boot:run
 ## 调用示例
 
 ```powershell
-curl -s -X POST http://localhost:8080/chat -H "Content-Type: application/json" -d "{\"message\":\"杭州今天天气怎么样？\"}"
+curl -s -X POST http://localhost:8080/chat -H "Content-Type: application/json" -d "{\"message\":\"杭州今天天气怎么样？\",\"conversationId\":\"demo-1\"}"
+```
+
+流式（SSE）：
+
+```powershell
+curl -N -X POST http://localhost:8080/chat/stream -H "Content-Type: application/json" -d "{\"message\":\"继续说详细点\",\"conversationId\":\"demo-1\"}"
 ```
 
 若模型选择调用工具，控制台会出现 `Tool getWeather invoked` 的 **INFO** 日志。
