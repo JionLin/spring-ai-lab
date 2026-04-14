@@ -1,0 +1,9 @@
+# DeepSeek（OpenAI 兼容）。密钥：环境变量 SPRING_AI_OPENAI_API_KEY。
+spring:
+  ai:
+    openai:
+      base-url: https://api.deepseek.com
+      api-key: ${SPRING_AI_OPENAI_API_KEY:}
+      chat:
+        options:
+          model: deepseek-chat

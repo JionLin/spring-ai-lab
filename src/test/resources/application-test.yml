@@ -1,0 +1,18 @@
+# 测试：纳入 deepseek LLM 片段，并用固定假密钥覆盖占位（不访问外网）。
+spring:
+  profiles:
+    include: deepseek
+  ai:
+    openai:
+      api-key: dummy-key-for-tests-only
+
+lab:
+  external:
+    post:
+      endpoints:
+        weather:
+          base-url: http://127.0.0.1:1
+          path: /api/weather
+        demo-echo:
+          base-url: http://127.0.0.1:1
+          path: /api/demo-echo

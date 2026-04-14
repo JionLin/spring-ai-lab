@@ -1,0 +1,11 @@
+# 本地 mock 外部 API 配置（配合 profile=mock 使用）。
+lab:
+  external:
+    post:
+      endpoints:
+        weather:
+          base-url: http://127.0.0.1:8080
+          path: /mock/weather
+        demo-echo:
+          base-url: http://127.0.0.1:8080
+          path: /mock/demo-echo
