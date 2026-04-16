@@ -12,5 +12,5 @@ spring:
 #  - name: gpt
 #    provider: openai
 #    model: gpt-5.4
-#    apiKey: sk-JYfCbDWLSO0cbILr7tcyIHDUDNyW1eM9pSIgFwS3jWoER8mn
+#    apiKey: sk-
 #    apiBase: https://ai.dofgm.cc/v1
