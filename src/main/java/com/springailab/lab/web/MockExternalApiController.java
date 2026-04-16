@@ -1,6 +1,5 @@
 package com.springailab.lab.web;
 
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +13,6 @@ import java.util.Map;
  *
  * @author jiaolin
  */
-@Profile("mock")
 @RestController
 @RequestMapping(value = "/mock", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class MockExternalApiController {
