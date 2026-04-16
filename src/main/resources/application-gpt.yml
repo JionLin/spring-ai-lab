@@ -1,0 +1,16 @@
+# DeepSeek（OpenAI 兼容）。密钥：环境变量 SPRING_AI_OPENAI_API_KEY。
+spring:
+  ai:
+    openai:
+      base-url: https://ai.dofgm.cc
+      api-key:  ${SPRING_AI_OPENAI_API_KEY:}
+      chat:
+        options:
+          model: gpt-5.4
+
+
+#  - name: gpt
+#    provider: openai
+#    model: gpt-5.4
+#    apiKey: sk-JYfCbDWLSO0cbILr7tcyIHDUDNyW1eM9pSIgFwS3jWoER8mn
+#    apiBase: https://ai.dofgm.cc/v1

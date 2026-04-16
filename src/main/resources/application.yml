@@ -15,6 +15,33 @@ spring:
   profiles:
     active: qwen
 
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${MYSQL_URL:jdbc:mysql://ys-dev-mysql.lai-ai.com:3306/db_mirror_medical?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false}
+    username: ${MYSQL_USERNAME:la_ys}
+    password: ${MYSQL_PASSWORD:ys@123321}
+
+
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 3s
+
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+
+
 logging:
   pattern:
     level: "%5p [traceId:%X{traceId}]"
@@ -49,14 +76,23 @@ lab:
     post:
       endpoints:
         weather:
-          base-url: http://127.0.0.1:1
-          path: /api/weather
+          base-url: http://127.0.0.1:8080
+          path: /mock/weather
         demo-echo:
-          base-url: http://127.0.0.1:1
-          path: /api/demo-echo
+          base-url: http://127.0.0.1:8080
+          path:  /mock/demo-echo
         user-query:
           base-url: http://127.0.0.1:8080
           path: /api/users/username-query
         vector-search:
           base-url: http://127.0.0.1:8080
           path: /api/vector/search
+
+  vector:
+    redis:
+      index-name: ${REDIS_VECTOR_INDEX:my_vector_index}
+      vector-field: ${REDIS_VECTOR_FIELD:vec}
+      content-field: ${REDIS_CONTENT_FIELD:content}
+      top-k: ${REDIS_VECTOR_TOP_K:5}
+      distance-metric: ${REDIS_DISTANCE_METRIC:COSINE}
+
